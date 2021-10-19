@@ -5,11 +5,11 @@
 | ------------------ | -------- |------------ |
 | lastname           | string   | null: false |
 | firstname          | string   | null: false |
-| kana-lastname      | string   | null: false |
-| kana-firstname     | string   | null: false |
+| kana_lastname      | string   | null: false |
+| kana_firstname     | string   | null: false |
 | email              | string   | null: false, unique: true |
 | encrypted_password | string   | null: false |
-| id                 | integer  | null: false, unique: true |
+| patient_id         | integer  | null: false, unique: true |
 | prefecture         | integer  | null: false |
 | city               | string   | null: false |
 | address            | string   | null: false |
@@ -24,8 +24,8 @@ has_many :orders
 | Colum              | Type       | Options     |
 | ------------------ | ---------  |------------ |
 | date               | datetime   | null: false |
-| right-eye          | integer    | null: false |
-| left-eye           | integer    | null: false |
+| right_eye          | integer    | null: false |
+| left_eye           | integer    | null: false |
 | status             | status     | null: false |
 | comment            | text       |             |
 | user_id            | references | null: false |
