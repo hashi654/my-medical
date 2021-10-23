@@ -21,6 +21,51 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :lastname, "苗字" %><br />
+    <%= f.email_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstname, "名前" %><br />
+    <%= f.email_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :kana_lastname, "苗字(カナ)" %><br />
+    <%= f.email_field :kana_lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :kana_firstname, "名前(カナ)" %><br />
+    <%= f.email_field :kana_firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :patient_id, "患者ID" %><br />
+    <%= f.email_field :patient_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture, "都道府県" %><br />
+    <%= f.email_field :prefecture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city, "市町村" %><br />
+    <%= f.email_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :building, "建物" %><br />
+    <%= f.email_field :building %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone, "電話番号" %><br />
+    <%= f.email_field :phone %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
