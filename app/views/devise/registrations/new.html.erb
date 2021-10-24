@@ -23,47 +23,52 @@
 
   <div class="field">
     <%= f.label :lastname, "苗字" %><br />
-    <%= f.email_field :lastname %>
+    <%= f.text_field :lastname %>
   </div>
 
   <div class="field">
     <%= f.label :firstname, "名前" %><br />
-    <%= f.email_field :firstname %>
+    <%= f.text_field :firstname %>
   </div>
 
   <div class="field">
     <%= f.label :kana_lastname, "苗字(カナ)" %><br />
-    <%= f.email_field :kana_lastname %>
+    <%= f.text_field :kana_lastname %>
   </div>
 
   <div class="field">
     <%= f.label :kana_firstname, "名前(カナ)" %><br />
-    <%= f.email_field :kana_firstname %>
+    <%= f.text_field :kana_firstname %>
   </div>
 
   <div class="field">
     <%= f.label :patient_id, "患者ID" %><br />
-    <%= f.email_field :patient_id %>
+    <%= f.text_field :patient_id %>
   </div>
 
   <div class="field">
     <%= f.label :prefecture, "都道府県" %><br />
-    <%= f.email_field :prefecture %>
+    <%= f.text_field :prefecture %>
   </div>
 
   <div class="field">
-    <%= f.label :city, "市町村" %><br />
-    <%= f.email_field :city %>
+    <%= f.label :city, "市" %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address, "町村" %><br />
+    <%= f.text_field :address %>
   </div>
 
   <div class="field">
     <%= f.label :building, "建物" %><br />
-    <%= f.email_field :building %>
+    <%= f.text_field :building %>
   </div>
 
   <div class="field">
     <%= f.label :phone, "電話番号" %><br />
-    <%= f.email_field :phone %>
+    <%= f.text_field :phone %>
   </div>
 
   <div class="actions">
