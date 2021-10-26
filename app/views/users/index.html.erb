@@ -1,6 +1,7 @@
 <h1>写ればOK</h1>
 <% if user_signed_in? %>
   <div>
+    <%= link_to "詳細", user_path(current_user.id)  %>
     <%= current_user.lastname %>
   </div>
 
