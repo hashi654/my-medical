@@ -1,20 +1,41 @@
-<h1>写ればOK</h1>
-<% if user_signed_in? %>
-  <div>
-    <%= link_to "詳細", user_path(current_user.id)  %>
-    <%= current_user.lastname %>
+<div class = user-top>
+  <div class = title>
+   <h1>〇〇病院 患者様専用ページ</h1>
   </div>
+  <% if user_signed_in? %>
+    <div class = name>
+      <%= current_user.lastname + current_user.firstname + "様" %>
+    </div>
 
-  <div>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  </div>
-  
-<% else %>
-  <div>
-    <%= link_to "新規登録", new_user_registration_path %>
-  </div>
+    <div class = info>
+      <%= "次回のご予約は〇〇月〇〇日〇〇時からです" %>
+    </div>
 
-  <div>
-    <%= link_to "ログイン", new_user_session_path %>
-  </div>
-<% end %>
+    <div order-button>
+      <%= "予約をキャンセルされる場合はこちら" %>
+    </div>
+    
+    <div class = button>
+      <%= link_to "詳細ページ", user_path(current_user.id)  %>
+    </div>
+
+    <div class = order-button>
+      <%= link_to "予約する", root_path %>
+    </div>
+
+    <div class = button>
+      <%= "過去の受診履歴" %>
+    </div>
+
+    <div class = button>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </div>
+  <% else %>
+    <div class = button>
+      <%= link_to "新規登録", new_user_registration_path %>
+    </div>
+    <div class = button>
+      <%= link_to "ログイン", new_user_session_path %>
+    </div>
+  <% end %>
+</div>
