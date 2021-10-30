@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :kana_lastname, presence: true, format: { with: /\A[ァ-ヶ]+\z/ }
   validates :kana_firstname, presence: true, format: { with: /\A[ァ-ヶ]+\z/ }
   validates :patient_id, presence: true, uniqueness: true
-  validates :prefecture, presence: true
+  validates :prefecture_id, presence: true
   validates :city, presence: true
   validates :address, presence: true
   validates :phone, presence: true
