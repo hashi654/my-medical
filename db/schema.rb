@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_105410) do
     t.string "kana_lastname", null: false
     t.string "kana_firstname", null: false
     t.integer "patient_id", null: false
-    t.integer "prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "building"
