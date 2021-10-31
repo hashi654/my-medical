@@ -1,3 +1,5 @@
+
+
 <div>
   <%= "予約一覧" %>
 </div>
@@ -7,13 +9,34 @@
 </div>
 
 <div>
-  <%= "11月" %>
+  <%= Date.today.month %><%= "月" %>
 </div>
 
 <div>
-  <%= "12月" %>
+  <%= Date.today.next_month.month %><%= "月" %>
 </div>
 
 <div>
-  <%= "1月" %>
+  <%= Date.today.months_since(2).month %><%= "月" %>
 </div>
+
+<% year = Date.today.year %>
+<% mon = Date.today.mon %>
+<% firstday_wday = Date.new(year, mon, 1).wday %>
+<% lastday_date = Date.new(year, mon, -1).day %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+
+<% (1..lastday_date).each do |date| %>
+<div>
+<%= date %><%= "日" %>
+<%= week[firstday_wday] %>
+<% (9..16).each do |time| %>
+  <%= time %><%= "時" %>
+<% end %>
+</div>
+<% if firstday_wday == 6%>
+  <% firstday_wday = 0 %>
+<% else %>
+  <% firstday_wday += 1 %>
+  <% end %>
+<% end %>
