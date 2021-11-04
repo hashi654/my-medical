@@ -31,8 +31,9 @@
 <%= date %><%= "日" %>
 <%= week[firstday_wday] %>
 <% (9..16).each do |time| %>
-  <%= time %><%= "時" %>
-<% end %>
+      <%= time %>
+      <%= "時" %>
+<% end %> 
 </div>
 <% if firstday_wday == 6%>
   <% firstday_wday = 0 %>
@@ -40,3 +41,6 @@
   <% firstday_wday += 1 %>
   <% end %>
 <% end %>
+
+
+<%= link_to "予約する", new_schedule_path %>

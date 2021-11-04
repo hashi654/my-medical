@@ -14,5 +14,11 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :phone, presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
+  has_many :results
+  has_many :schedules
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
 end
 

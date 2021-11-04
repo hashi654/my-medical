@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 2021_10_29_105410) do
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "year", null: false
-    t.integer "month", null: false
-    t.integer "day", null: false
-    t.integer "hour", null: false
+    t.integer "year_id", null: false
+    t.integer "month_id", null: false
+    t.integer "day_id", null: false
+    t.integer "hour_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,4 +56,5 @@ ActiveRecord::Schema.define(version: 2021_10_29_105410) do
 
   add_foreign_key "orders", "schedules"
   add_foreign_key "orders", "users"
+  add_foreign_key "schedules", "users"
 end

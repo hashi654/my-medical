@@ -19,6 +19,7 @@
 ### Association
 has_many :results
 has_many :orders
+has_many :schedules
 
 ## Results テーブル
 | Colum              | Type       | Options     |
@@ -50,6 +51,8 @@ belongs_to :schedule
 | month              | integer    | null: false |
 | day                | integer    | null: false |
 | hour               | integer    | null: false |
+| user_id            | references | null: false |
 
 ### Association
 has_one :order
+belongs_to :user
