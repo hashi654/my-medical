@@ -7,4 +7,10 @@ class Schedule < ApplicationRecord
 
   belongs_to :user
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :year
+  belongs_to :month
+  belongs_to :day
+  belongs_to :hour
+
 end
