@@ -1,23 +1,13 @@
 
+<%= link_to "予約する", new_schedule_path %><br>
+<%= link_to "トップページに戻る", root_path %>
 
 <div>
-  <%= "予約一覧" %>
-</div>
-
-<div>
-  <%= "月を選択" %>
+  <%= "予約可能日一覧" %>
 </div>
 
 <div>
   <%= Date.today.month %><%= "月" %>
-</div>
-
-<div>
-  <%= Date.today.next_month.month %><%= "月" %>
-</div>
-
-<div>
-  <%= Date.today.months_since(2).month %><%= "月" %>
 </div>
 
 <% year = Date.today.year %>
@@ -30,10 +20,7 @@
 <div>
 <%= date %><%= "日" %>
 <%= week[firstday_wday] %>
-<% (9..16).each do |time| %>
-      <%= time %>
-      <%= "時" %>
-<% end %> 
+    <%= "9〜16時" %>
 </div>
 <% if firstday_wday == 6%>
   <% firstday_wday = 0 %>
@@ -42,5 +29,8 @@
   <% end %>
 <% end %>
 
+<div>
+  <%= Date.today.next_month.month %><%= "月" %>
+</div>
 
-<%= link_to "予約する", new_schedule_path %>
+

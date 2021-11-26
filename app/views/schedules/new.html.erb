@@ -1,13 +1,13 @@
 <div>
-  <%= "管理者のみ見れるページ" %>
-  <%= "予約日" %>
-  <%= "11月" %><%= "26日" %><%= "日曜日" %>
+  <%= "希望日時を選んでください" %>
 </div>
 
 <%= form_with(model: @schedule, local: true) do |form| %>
-      <%= form.collection_select(:year_id, Year.all, :id, :name, {}) %>
-      <%= form.collection_select(:month_id, Month.all, :id, :name, {}) %>
-      <%= form.collection_select(:day_id, Day.all, :id, :name, {}) %>
-      <%= form.collection_select(:hour_id, Hour.all, :id, :name, {}) %>
+      <%= form.collection_select(:year_id, Year.all, :id, :name, {}) %><%= "年" %> 
+      <%= form.collection_select(:month_id, Month.all, :id, :name, {}) %><%= "月" %>
+      <%= form.collection_select(:day_id, Day.all, :id, :name, {}) %><%= "日" %>
+      <%= form.collection_select(:hour_id, Hour.all, :id, :name, {}) %><%= "時" %>
       <%= form.submit "SEND" %>
 <% end %>
+
+<%= link_to "トップページに戻る", root_path %>

@@ -8,7 +8,13 @@
     </div>
 
     <div class = info>
-      <%= "次回のご予約は〇〇月〇〇日〇〇時からです" %>
+      <%= "次回のご予約は" %><br>
+      <% @schedules.each do |schedule| %>
+      <%= "#{schedule.month_id}月#{schedule.day_id}日#{schedule.hour_id}時からです" %><br>
+      <% end %>
+      <% if @schedules.empty? %>
+        <%= "ありません" %>
+      <% end %>
     </div>
 
     <div order-button>
@@ -16,7 +22,7 @@
     </div>
     
     <div class = button>
-      <%= link_to "詳細ページ", user_path(current_user.id)  %>
+      <%#= link_to "詳細ページ", user_path(current_user.id)  %>
     </div>
 
     <div class = order-button>
@@ -24,7 +30,7 @@
     </div>
 
     <div class = button>
-      <%= "過去の受診履歴" %>
+      <%#= "過去の受診履歴" %>
     </div>
 
     <div class = button>
