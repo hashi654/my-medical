@@ -47,8 +47,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :prefecture, "都道府県" %><br />
-    <%= f.text_field :prefecture %>
+    <%= "都道府県" %><br />
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, ) %><br />
   </div>
 
   <div class="field">

@@ -1,0 +1,36 @@
+
+<%= link_to "予約する", new_schedule_path %><br>
+<%= link_to "トップページに戻る", root_path %>
+
+<div>
+  <%= "予約可能日一覧" %>
+</div>
+
+<div>
+  <%= Date.today.month %><%= "月" %>
+</div>
+
+<% year = Date.today.year %>
+<% mon = Date.today.mon %>
+<% firstday_wday = Date.new(year, mon, 1).wday %>
+<% lastday_date = Date.new(year, mon, -1).day %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+
+<% (1..lastday_date).each do |date| %>
+<div>
+<%= date %><%= "日" %>
+<%= week[firstday_wday] %>
+    <%= "9〜16時" %>
+</div>
+<% if firstday_wday == 6%>
+  <% firstday_wday = 0 %>
+<% else %>
+  <% firstday_wday += 1 %>
+  <% end %>
+<% end %>
+
+<div>
+  <%= Date.today.next_month.month %><%= "月" %>
+</div>
+
+
